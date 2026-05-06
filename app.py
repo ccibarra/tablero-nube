@@ -24,8 +24,8 @@ def load_data():
     # To do: Completar la funciÃ³n 
     
 
-# Cargar datos
-data = load_data()
+    # Cargar datos
+    data = load_data()
 
 # Graficar serie
 def plot_series(data, initial_date, proy):
