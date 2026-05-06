@@ -21,11 +21,12 @@ app.config.suppress_callback_exceptions = True
 
 # Load data from csv
 def load_data():
-    # To do: Completar la funciÃ³n 
-    
+    data = pd.read_csv("data.csv")
+    data["datetime"] = pd.to_datetime(data["datetime"])
+    data.set_index("datetime", inplace=True)
+    return data
 
-    # Cargar datos
-    data = load_data()
+data = load_data()
 
 # Graficar serie
 def plot_series(data, initial_date, proy):
@@ -240,4 +241,4 @@ def update_output_div(date, hour, proy):
 
 # Run the server
 if __name__ == "__main__":
-    app . run_server( host=" 0 .0 .0 .0 ",  debug = True )
+    app.run_server(host="0.0.0.0", debug=True)      
